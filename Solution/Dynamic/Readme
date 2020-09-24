@@ -1,0 +1,31 @@
+All executable files require python3 interpreter
+
+Required Libraries:
+	numpy,
+	pandas,
+	sklearn,
+	joblib,
+	matplotlib,
+	csv,
+	sys,
+	re,
+	pathlib,
+
+
+Training Phase:
+	File: dynamicAnalysis.py 
+	Additional files required:All the Benign and Malware Analysed Raw Data
+	Execute the file to extract the features from benign and malware data and then saves it into DynamicAnalysis.xlt
+
+	File: DynamicAnalysis_train.py
+	Additional required files: DynamicAnalysis.xlt 	-	Data file
+	Execute the file to train model and store the additional objects required to make predictions on testdata.
+
+Testing Phase:
+	File: Dynamic.py
+	Additional required files: 
+		Malware and Benign test Files, its path	-	Test Data file
+		model				        -	model saved during training phase
+	Ensure the DynamicAnalysis_train.py is executed at least once, otherwise dynamic.py may throw error (Additional objects saved during training phase are required here.)
+	Place your test data files at one place and specify its path to the file dynamic.py
+	Execute dynamic.py to make predictions (Results are saved to the file dynamic.csv).

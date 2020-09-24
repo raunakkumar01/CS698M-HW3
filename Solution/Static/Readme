@@ -1,0 +1,42 @@
+All executable files require python3 interpreter
+
+Required Libraries:
+	numpy,
+	pandas,
+	sklearn,
+	joblib,
+	matplotlib,
+	csv,
+	sys,
+	re,
+	pathlib,
+Feature Extracting:
+	File: static_malware.py
+	Additional required files:All the Malware Analysed Raw Data
+	Execute this file to find all the features and API present with respect to malware(Result saved to file_mal_api_1.csv and 		file_mal_feat_1.csv)
+	
+	File: static_benign.py
+	Additional required files:All the Benign Analysed Raw Data
+	Execute this file to find all the features and API present with respect to benign(Result saved to file_ben_api_1.csv and 		file_ben_feat_1.csv)	
+
+	File: static_full.py
+	Additional required files:  file_mal_api_1.csv , file_ben_api_1.csv , file_mal_feat_1.csv , file_ben_feat_1.csv
+	Execute this file to combine the features and get the top 120 API based on frequency(Result saved to file_top_120.csv)	
+		
+Training Phase:
+	File: staticAnalysis.py 
+	Additional files required:All the Benign and Malware Analysed Raw Data
+	Execute the file to extract the features from benign and malware data and then saves it into StaticAnalysis.xlt
+
+	File: staticAnalysis_train.py
+	Additional required files: StaticAnalysis.xlt 	-	Data file
+	Execute the file to train the model and store the additional objects required to make predictions on testdata.
+
+Testing Phase:
+	File: static.py
+	Additional required files: 
+		Malware and Benign Files, its path	-	Test Data file
+		model				        -	model saved during training phase
+	Ensure the staticAnalysis_train.py is executed at least once, otherwise static.py may throw error (Additional objects saved during 		training phase are required here.)
+	Place your test data files at one place and specify its path to the file static.py
+	Execute static.py to make predictions (Results are saved to the file static.csv).
